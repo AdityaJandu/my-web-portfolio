@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* 1. Colors & Surface Philosophy */
+  --background: #0e0e0e; /* The Void */
+  --foreground: #adaaaa; /* on_surface_variant (avoids pure white for body) */
+  --surface-container-low: #131313;
+  
+  --primary: #8ff5ff; /* Neon Teal */
+  --primary-container: #00eefc; 
+  --secondary: #bf81ff; /* Electric Purple */
+  --tertiary: #ff7439; /* Vibrant Orange */
+  
+  --on-secondary: #32005c; /* Used for ambient shadows */
+  --outline-variant: #494847; /* Used for ghost borders */
+
+  /* 2. Typography Tokens */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* 3. Motion / Haptic Easing */
+  --ease-haptic: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* 4. Tailwind v4 Theme Mapping */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  --color-primary: var(--primary);
+  --color-primary-container: var(--primary-container);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-surface-low: var(--surface-container-low);
+  
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 5. Base HTML/Body Elements */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em; /* Stamped editorial feel */
+  color: #ffffff; /* Bright contrast for headings */
+}
+
+/* 6. Design System Component Utilities */
+
+/* Glassmorphism & Bento Boxes */
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.05); /* 5% surface variant */
+  backdrop-filter: blur(12px); /* md blur */
+  -webkit-backdrop-filter: blur(12px);
+  /* Ghost Border: outline-variant at 15% opacity */
+  border: 1px solid rgba(73, 72, 71, 0.15); 
+  border-radius: 0.75rem; /* xl scale */
+  padding: 0.85rem; /* 2.5 spacing equivalent */
+  transition: all 0.3s var(--ease-haptic);
+}
+
+.glass-panel:hover {
+  backdrop-filter: blur(16px); /* Shifts to lg blur */
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(73, 72, 71, 0.3); /* "Powering up" border */
+}
+
+/* Ambient "Purple Haze" Shadows */
+.shadow-ambient {
+  /* on_secondary at 8% opacity with 40px blur */
+  box-shadow: 0 10px 40px rgba(50, 0, 92, 0.08);
+}
+
+/* Buttons (Power Cells) */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: #000000; /* on_primary_fixed */
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 600;
+  /* 10px outer glow of primary at 30% */
+  box-shadow: 0 0 10px rgba(143, 245, 255, 0.3);
+  transition: all 0.3s var(--ease-haptic);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 20px rgba(143, 245, 255, 0.5); /* Intensified glow */
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid rgba(73, 72, 71, 0.2); /* Ghost border at 20% */
+  transition: all 0.3s var(--ease-haptic);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(73, 72, 71, 1); /* 100% opacity on hover */
+}
+
+/* Input Fields */
+.input-neon {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--outline-variant);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  padding: 0.5rem 0;
+  transition: all 0.3s var(--ease-haptic);
+}
+
+.input-neon:focus {
+  outline: none;
+  border-bottom-color: var(--primary);
+  box-shadow: 0 4px 10px -4px rgba(143, 245, 255, 0.4);
 }
