@@ -1,25 +1,15 @@
-"use client";
 
-import Image from "next/image";
-import { tools, masteryCards } from "@/data/tech_stack";
 
-export default function TechnicalEcosystem() {
-    // Map color → CSS variable
-    const getColorVar = (
-        colorName: "primary" | "secondary" | "tertiary"
-    ) => `var(--${colorName})`;
+import { allTools, masteryCards } from "@/data/tech_stack";
+import { SkillBox } from "../layout/SkillBox";
+import { getColorVar } from "@/utils/utils";
 
-    // Glow styles for icons
-    const glowMap = {
-        primary: "drop-shadow-[0_0_10px_#00f0ff]",
-        secondary: "drop-shadow-[0_0_10px_#8a2be2]",
-        tertiary: "drop-shadow-[0_0_10px_#ff5c00]",
-    };
 
+export default function TechStack() {
     return (
         <section
             id="skills"
-            className="relative max-w-7xl mx-auto px-6 md:px-12 py-24"
+            className="relative max-w-7xl mx-auto px-6 md:px-12"
         >
             {/* Header */}
             <div className="mb-12">
@@ -32,29 +22,12 @@ export default function TechnicalEcosystem() {
                 </p>
             </div>
 
-            {/* 🔲 Grid 1: Tools */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 mb-4 md:mb-6">
-                {tools.map((tool) => (
-                    <div
-                        key={tool.name}
-                        className="glass-panel flex flex-col items-center justify-center py-10 md:py-0 md:h-40 group cursor-default transition hover:shadow-[0_0_25px_rgba(0,240,255,0.08)]"
-                    >
-                        {/* Icon */}
-                        <Image
-                            src={tool.icon}
-                            alt={tool.name}
-                            width={40}
-                            height={40}
-                            className="mb-4 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1"
-                        />
+            <SkillBox tools={allTools} />
 
-                        {/* Name */}
-                        <p className="text-xs tracking-widest text-white uppercase font-bold font-display text-center">
-                            {tool.name}
-                        </p>
-                    </div>
-                ))}
-            </div>
+
+
+
+            {/* <SkillsStack /> */}
 
             {/* 🧠 Grid 2: Mastery Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
@@ -90,7 +63,7 @@ export default function TechnicalEcosystem() {
                         </div>
 
                         {/* Tags */}
-                        <div className="flex flex-wrap gap-3 z-10">
+                        <div className=" flex flex-wrap gap-3 z-10">
                             {card.tags.map((tag) => {
                                 const tagColor = getColorVar(tag.color);
 
@@ -112,6 +85,6 @@ export default function TechnicalEcosystem() {
                     </div>
                 ))}
             </div>
-        </section>
+        </section >
     );
 }

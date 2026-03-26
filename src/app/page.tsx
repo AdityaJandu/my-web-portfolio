@@ -1,7 +1,9 @@
 import Navbar from "@/components/layout/Navbar";
 import AboutCard from "@/components/ui/AboutCard";
 import HeroCard from "@/components/ui/HeroCard";
-import TechnicalEcosystem from "@/components/ui/TechnicalEcosystem";
+import ProjectCard from "@/components/ui/ProjectCard";
+import TechStack from "@/components/ui/TechStack";
+
 
 
 export default function Page() {
@@ -12,9 +14,9 @@ export default function Page() {
 
       <AboutCard />
 
-      <TechnicalEcosystem />
+      <TechStack />
 
-      {/* We will add the other sections (Skills, Projects, etc.) down here later */}
+      <ProjectCard />
     </main>
   );
 }

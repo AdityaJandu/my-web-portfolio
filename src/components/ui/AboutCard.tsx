@@ -28,7 +28,7 @@ export default function AboutCard() {
 
                     {/* Headline */}
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-8 tracking-tight">
-                        Hello, I'm <span className="text-primary">Aditya.</span>
+                        Hello, I&apos;m <span className="text-primary">Aditya.</span>
                     </h2>
 
                     {/* Bio Text */}
