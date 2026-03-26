@@ -27,7 +27,7 @@ export const Project = ({ project, index = 0 }: Props) => {
                 />
 
                 {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-70" />
 
                 {/* Icon */}
                 <div className="absolute top-3 right-3 bg-black/50 p-2 rounded-md opacity-0 group-hover:opacity-100 transition">

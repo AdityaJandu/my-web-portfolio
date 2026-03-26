@@ -24,7 +24,7 @@ export const SkillBox = ({ tools }: SkillBoxProps) => {
                 {visibleTools.map((tool) => (
                     <div
                         key={tool.name}
-                        className="glass-panel flex flex-col items-center justify-center py-8 md:py-0 md:h-36 group cursor-default transition-all duration-300 hover:border-[var(--primary)]/30 hover:shadow-[0_0_25px_rgba(0,240,255,0.05)]"
+                        className="glass-panel flex flex-col items-center justify-center py-8 md:py-0 md:h-36 group cursor-default transition-all duration-300 hover:border-(--primary)/30 hover:shadow-[0_0_25px_rgba(0,240,255,0.05)]"
                     >
                         <Image
                             src={tool.icon}
@@ -34,7 +34,7 @@ export const SkillBox = ({ tools }: SkillBoxProps) => {
                             className="mb-4 transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1 drop-shadow-md"
                         />
 
-                        <p className="text-[10px] md:text-xs tracking-widest text-[var(--foreground)] group-hover:text-white uppercase font-bold font-display text-center transition-colors">
+                        <p className="text-[10px] md:text-xs tracking-widest text-foreground group-hover:text-white uppercase font-bold font-display text-center transition-colors">
                             {tool.name}
                         </p>
                     </div>

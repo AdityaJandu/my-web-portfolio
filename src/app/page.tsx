@@ -3,6 +3,7 @@ import AboutCard from "@/components/ui/AboutCard";
 import HeroCard from "@/components/ui/HeroCard";
 import ProjectCard from "@/components/ui/ProjectCard";
 import TechStack from "@/components/ui/TechStack";
+import ProfessionalExperience from "@/components/ui/ProfessionalExperience";
 
 
 
@@ -17,6 +18,8 @@ export default function Page() {
       <TechStack />
 
       <ProjectCard />
+
+      <ProfessionalExperience />
     </main>
   );
 }
