@@ -10,7 +10,7 @@ export default function Navbar() {
 
             <div className="flex gap-10">
                 {/* Desktop Links */}
-                <ul className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground">
+                <ul className="hidden md:flex items-center font-display gap-8 text-sm font-medium text-foreground">
                     {['About', 'Skills', 'Projects', 'Experience', 'Contact'].map((item) => (
                         <li key={item}>
                             <Link
@@ -24,9 +24,13 @@ export default function Navbar() {
                 </ul>
 
                 {/* CTA Button */}
-                <Link href="#resume" className="hidden md:block">
+                <Link
+                    href="/files/Aditya_Resume.pdf"
+                    className="hidden md:block"
+                    target="_blank"
+                >
                     <button className="btn-primary ">
-                        <p className="text-[0.8rem] font-bold">RESUME</p>
+                        <p className="text-[0.8rem] font-display font-bold">RESUME</p>
                     </button>
                 </Link>
             </div>

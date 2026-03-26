@@ -5,8 +5,6 @@ import { WorkExpData } from "@/data/work_experience";
 
 export default function ProfessionalExperience() {
 
-
-
     return (
         <section className="relative max-w-6xl mx-auto px-6 py-24">
 
@@ -18,6 +16,8 @@ export default function ProfessionalExperience() {
 
                 <div className="w-30 h-1 bg-linear-to-r from-primary via-[#a6c1ee] to-secondary mx-auto mt-4 rounded-full" />
             </div>
+
+
             {/* Mobile View */}
             <div className="md:hidden relative">
                 <div className="flex flex-col gap-16">

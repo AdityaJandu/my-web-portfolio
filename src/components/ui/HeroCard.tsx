@@ -1,3 +1,4 @@
+import Link from "next/link";
 import GridBackground from "../layout/GridBackground";
 
 
@@ -26,11 +27,14 @@ export default function HeroCard() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center gap-6">
-                    <button className="btn-primary w-full sm:w-auto">View My Work</button>
-                    <button className="btn-secondary w-full sm:w-auto">Contact Me</button>
+                    <Link href={"#projects"} scroll={true} >
+                        <button className="btn-primary w-full sm:w-auto">View My Work</button>
+                    </Link>
+                    <Link href={"#contact"} scroll={true} >
+                        <button className="btn-secondary w-full sm:w-auto">Contact Me</button>
+                    </Link>
                 </div>
             </div>
-
 
         </section>
     );

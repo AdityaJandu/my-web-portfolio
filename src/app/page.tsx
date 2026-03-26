@@ -4,6 +4,8 @@ import HeroCard from "@/components/ui/HeroCard";
 import ProjectCard from "@/components/ui/ProjectCard";
 import TechStack from "@/components/ui/TechStack";
 import ProfessionalExperience from "@/components/ui/ProfessionalExperience";
+import ContactSection from "@/components/ui/ContactSection";
+import Footer from "@/components/layout/Footer";
 
 
 
@@ -11,6 +13,8 @@ export default function Page() {
   return (
     <main className="relative bg-background min-h-screen">
       <Navbar />
+
+
       <HeroCard />
 
       <AboutCard />
@@ -20,6 +24,12 @@ export default function Page() {
       <ProjectCard />
 
       <ProfessionalExperience />
+
+      <ContactSection />
+
+
+      <Footer />
     </main>
+
   );
 }
