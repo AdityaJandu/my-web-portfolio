@@ -3,8 +3,22 @@ import Link from "next/link";
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
+    const socialLinks = [
+        {
+            name: "Github",
+            url: "https://github.com/AdityaJandu",
+        },
+        {
+            name: "LinkedIn",
+            url: "https://www.linkedin.com/in/aditya-84278234a/",
+        },
+        {
+            name: "Email",
+            url: "janduaditay@gmail.com",
+        },
+    ];
     return (
-        <footer className="relative z-50 w-full border-t border-white/5 bg-[#0a0a0a]">
+        <footer className="relative z-50 font-display w-full border-t border-white/5 bg-[#0a0a0a]">
             <div className="px-6 md:px-8  py-8 md:py-12 flex flex-col md:flex-row items-center justify-between gap-6">
 
                 {/* Logo */}
@@ -13,19 +27,26 @@ export default function Footer() {
                 </Link>
 
                 {/* Copyright */}
-                <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/40">
-                    &copy; {currentYear}. Built for the future.
-                </p>
+                <div className="flex flex-col items-center justify-center">
+                    <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/40">
+                        &copy; {currentYear}. Built for the future.
+                    </p>
+
+                    <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/40">
+                        Built by AJ using Next.JS
+                    </p>
+                </div>
 
                 {/* Social Links */}
                 <div className="flex items-center gap-8">
-                    {["Github", "LinkedIn", "Email"].map((link) => (
+                    {socialLinks.map((link) => (
                         <Link
-                            key={link}
-                            href="#" // Add your actual URLs here
+                            key={link.name}
+                            href={link.url}
+                            target="_blank"
                             className="text-[10px] font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors"
                         >
-                            {link}
+                            {link.name}
                         </Link>
                     ))}
                 </div>

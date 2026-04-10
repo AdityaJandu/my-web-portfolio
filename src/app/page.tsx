@@ -12,9 +12,6 @@ import Footer from "@/components/layout/Footer";
 export default function Page() {
   return (
     <main className="relative bg-background min-h-screen">
-      <Navbar />
-
-
       <HeroCard />
 
       <AboutCard />
@@ -27,8 +24,6 @@ export default function Page() {
 
       <ContactSection />
 
-
-      <Footer />
     </main>
 
   );
