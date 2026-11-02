@@ -1,6 +1,6 @@
 import { getColorVar } from "@/utils/utils";
-import { ExperienceCard } from "../layout/ExperienceCard";
-import { WorkExpData } from "@/data/work_experience";
+import { ExperienceCard } from "../components/layout/ExperienceCard";
+import { WorkExpData } from "@/modules/home/data/work_experience";
 
 
 export default function ProfessionalExperience() {

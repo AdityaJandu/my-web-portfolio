@@ -1,6 +1,6 @@
 "use client";
 
-import { ProjectType } from "@/data/project";
+import { ProjectType } from "@/modules/home/data/project";
 import { getColorVar } from "@/utils/utils";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";

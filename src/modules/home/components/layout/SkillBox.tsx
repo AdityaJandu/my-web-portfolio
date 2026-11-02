@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Tool } from "@/data/tech_stack";
+import { Tool } from "@/modules/home/data/tech_stack";
 import { ChevronDown } from "lucide-react";
 
 interface SkillBoxProps {

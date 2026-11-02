@@ -1,7 +1,7 @@
 
 
-import { allTools, masteryCards } from "@/data/tech_stack";
-import { SkillBox } from "../layout/SkillBox";
+import { allTools, masteryCards } from "@/modules/home/data/tech_stack";
+import { SkillBox } from "../components/layout/SkillBox";
 import { getColorVar } from "@/utils/utils";
 
 

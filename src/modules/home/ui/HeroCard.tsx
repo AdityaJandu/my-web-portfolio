@@ -1,5 +1,5 @@
 import Link from "next/link";
-import GridBackground from "../layout/GridBackground";
+import GridBackground from "../components/layout/GridBackground";
 
 
 export default function HeroCard() {

@@ -1,4 +1,4 @@
-import { WorkExpType } from "@/data/work_experience";
+import { WorkExpType } from "@/modules/home/data/work_experience";
 import { getColorVar } from "@/utils/utils";
 
 interface Props {

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ProjectData } from "@/data/project";
-import { Project } from "../layout/Project";
+import { ProjectData } from "@/modules/home/data/project";
+import { Project } from "../components/layout/Project";
 import { ChevronDown } from "lucide-react";
 
 export default function ProjectCard() {
